@@ -1,0 +1,20 @@
+
+# Build files
+/build/
+/cmake-build-*/
+build*/
+
+# Local databases and backups
+*.db
+*.db-journal
+
+# Uploaded test submissions
+/lms_data/
+
+# Runtime logs
+/lms.log
+
+# IDE settings
+.vscode/
+.idea/
+
