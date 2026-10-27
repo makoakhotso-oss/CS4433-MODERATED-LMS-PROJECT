@@ -1,4 +1,4 @@
-# Moderated Learning Management System (LMS) v1.0
+# Moderated Offline Learning Management System
 
 Offline C++17 / SQLite console application for a secondary school (CS4433 Software
 Engineering project). Four roles - Administrator, Lecturer, Head of Department (HoD),
