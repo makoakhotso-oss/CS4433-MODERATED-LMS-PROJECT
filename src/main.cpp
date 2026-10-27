@@ -12,7 +12,7 @@
 namespace {
 
 void printHelp() {
-  std::cout << "Learning Management System v1.0\n"
+  std::cout << "Moderated offline Learning Management System \n"
                "Usage: lms [options]\n"
                "  --db <file>      database file          (default: lms.db)\n"
                "  --data <folder>  uploaded work folder   (default: lms_data)\n"

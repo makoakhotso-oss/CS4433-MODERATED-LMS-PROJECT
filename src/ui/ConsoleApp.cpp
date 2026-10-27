@@ -66,7 +66,7 @@ void ConsoleApp::firstRunSetup() {
 }
 
 void ConsoleApp::run() {
-  c_.print("Learning Management System v1.0 (offline)");
+  c_.print("Offline Moderated Learning Management System");
   try {
     for (;;) {
       c_.print();
