@@ -22,3 +22,50 @@ cmake -S . -B build && cmake --build build
 ./build/lms_tests            # run the automated tests
 ./build/lms --seed-demo      # empty database filled with demo school; log in as admin
 ```
+
+---
+
+## Final Project Submission
+
+**Project:** Offline Moderated Learning Management System  
+**Module:** CS4433 – Software Engineering
+
+### Final Report
+- [Final Consolidated Report (PDF)](docs/FINAL_REPORT.pdf)
+
+### Original Diagrams
+
+**Phase 1: Project Planning**
+- [Work Breakdown Structure](images/wbs.png)
+- [Gantt Chart](images/gantt_chart.png)
+
+**Phase 2: Requirements Engineering**
+- [Use Case Diagram](images/use_case.png)
+
+**Phase 3: System Design**
+- [Component Diagram](images/component_diagram.png)
+- [Class Diagram](images/class_diagram.png)
+- [State Machine Diagram](images/state_diagram.png)
+- [Activity Diagram](images/activity_diagram.png)
+- [Submit Assignment Sequence Diagram](images/sequence_diagram_submit_assignment.png)
+- [Moderate and Release Marks Sequence Diagram](images/sequence_diagrams_moderate_and_release_marks.png)
+- [Entity Relationship Diagram](images/erd.png)
+
+**Phase 7: Deployment**
+- [UML Deployment Diagram](images/uml_deployment_diagrams.png)
+
+### Implementation and Supporting Documentation
+- [Build and Installation Guide](docs/BUILD_GUIDE.md)
+- [Requirements Traceability](docs/PHASE4_TRACEABILITY.md)
+- [Requirements Coverage](docs/REQUIREMENTS_COVERAGE.md)
+- [As-Built Design Deviations](docs/AS_BUILT_DEVIATIONS.md)
+- [Security Documentation](docs/SECURITY.md)
+- [Earlier Assignment Documents](reference/)
+- [Source Code](src/)
+- [Automated Tests](tests/)
+- [Database Schema](sql/)
+- [CI Test Runs](../../actions)
+
+### Video Presentation
+15-minute project presentation: **Link to be added after recording.**
+
