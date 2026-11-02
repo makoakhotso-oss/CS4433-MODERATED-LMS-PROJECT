@@ -55,7 +55,14 @@ file(GLOB_RECURSE LMS_CORE_SOURCES CONFIGURE_DEPENDS
 
 add_library(lms_core STATIC ${LMS_CORE_SOURCES} "${CMAKE_BINARY_DIR}/generated/SchemaSql.cpp")
 target_include_directories(lms_core PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
-target_link_libraries(lms_core PUBLIC SQLite::SQLite3 ${LMS_SODIUM_TARGET})
+# FindSQLite3 exports SQLite3::SQLite3 in newer CMake releases. Keep the
+# legacy target as a fallback for older CMake versions supported by this project.
+if(TARGET SQLite3::SQLite3)
+  set(LMS_SQLITE_TARGET SQLite3::SQLite3)
+else()
+  set(LMS_SQLITE_TARGET SQLite::SQLite3)
+endif()
+target_link_libraries(lms_core PUBLIC ${LMS_SQLITE_TARGET} ${LMS_SODIUM_TARGET})
 
 function(lms_enable_warnings target)
   if(MSVC)

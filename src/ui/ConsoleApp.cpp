@@ -35,9 +35,9 @@ void ConsoleApp::runMenu(const User& user, const std::string& title,
     c_.print();
     c_.print("=== " + title + " ===");
     for (std::size_t i = 0; i < items.size(); ++i) {
-      c_.print("  " + std::to_string(i + 1) + ") " + items[i].label);
+      c_.print("[" + std::to_string(i + 1) + "] " + items[i].label);
     }
-    c_.print("  0) Log out");
+    c_.print("[0] Log out");
     const auto choice = c_.askChoice("Choose: ");
     if (!choice) continue;
     if (*choice == 0) return;
@@ -70,7 +70,8 @@ void ConsoleApp::run() {
   try {
     for (;;) {
       c_.print();
-      c_.print("1) Log in    0) Exit");
+      c_.print("[1] Enter 1 to log in");
+      c_.print("[0] Enter 0 to exit");
       const auto choice = c_.askChoice("Choose: ");
       if (!choice) continue;
       if (*choice == 0) {

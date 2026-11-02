@@ -34,7 +34,7 @@ std::optional<Role> askRole(Console& c) {
 // ---------------------------------------------------------------------- menus
 
 void ConsoleApp::administratorMenu(User& u) {
-  runMenu(u, "Administrator - " + u.fullName(),
+  runMenu(u, "Admin Menu | " + u.fullName(),
           {{"Create user", [&] { createUser(u); }},
            {"List users", [&] { listUsers(u); }},
            {"Update user (name, role, department)", [&] { updateUser(u); }},
@@ -52,7 +52,7 @@ void ConsoleApp::administratorMenu(User& u) {
 }
 
 void ConsoleApp::lecturerMenu(User& u) {
-  runMenu(u, "Lecturer - " + u.fullName(),
+  runMenu(u, "Lecturer Menu | " + u.fullName(),
           {{"My courses and assignments", [&] { listCourses(u, true); }},
            {"Create course", [&] { lecturerCreateCourse(u); }},
            {"Rename course", [&] { renameCourse(u); }},
@@ -66,7 +66,7 @@ void ConsoleApp::lecturerMenu(User& u) {
 }
 
 void ConsoleApp::headOfDepartmentMenu(User& u) {
-  runMenu(u, "Head of Department - " + u.fullName(),
+  runMenu(u, "HoD Menu | " + u.fullName(),
           {{"Department courses and assignments", [&] { listCourses(u, true); }},
            {"Review marks of an assignment", [&] { reviewMarks(u); }},
            {"Approve and release marks", [&] { approveMarks(u); }},
@@ -76,7 +76,7 @@ void ConsoleApp::headOfDepartmentMenu(User& u) {
 }
 
 void ConsoleApp::studentMenu(User& u) {
-  runMenu(u, "Student - " + u.fullName(),
+  runMenu(u, "Student Menu | " + u.fullName(),
           {{"My courses", [&] { listCourses(u, false); }},
            {"My assignments", [&] { listStudentAssignments(u); }},
            {"Submit or resubmit an assignment", [&] { submitAssignment(u); }},

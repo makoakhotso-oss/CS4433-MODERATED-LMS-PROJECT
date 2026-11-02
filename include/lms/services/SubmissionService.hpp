@@ -41,8 +41,8 @@ class SubmissionService {
                     SubmissionOptions options = {});
 
   /// Submits the file as a new attempt, with an optional comment (UC-01 step 3). The first
-  /// submission may be late; a replacement is only allowed up to the applicable deadline and
-  /// only until the work has been marked.
+  /// submission may be late; a replacement is allowed up to the applicable deadline. Earlier
+  /// marked or released attempts remain in history; the newest attempt is marked separately.
   SubmissionReceipt submit(const User& student, Id assignmentId,
                            const std::filesystem::path& file, const std::string& comments = "");
 

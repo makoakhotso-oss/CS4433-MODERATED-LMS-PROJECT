@@ -6,7 +6,7 @@ Student - with assignment submission, late penalties, individual extensions, mar
 HoD moderation, release of marks and a tamper-evident mark audit log.
 
 ```
-include/lms/   headers        src/   implementation        tests/  GoogleTest suite (103 tests)
+include/lms/   headers        src/   implementation        tests/  GoogleTest suite (104 tests, as verified in the submitted build log)
 sql/schema.sql database schema (single source of truth, embedded at build time)
 docs/          build guide, coding standard, security, as-built deviations, requirements coverage
 ```
@@ -15,7 +15,7 @@ Layers (Software Design Document 3.1): **ui** (console menus) -> **services** (r
 permissions, late penalty strategy, workflow) -> **data** (repository interfaces + SQLite
 implementations, the only code that touches SQLite).
 
-Quick start: see [docs/BUILD_GUIDE.md](docs/BUILD_GUIDE.md).
+Quick start: see [docs/BUILD_GUIDE.md](docs/BUILD_GUIDE.md). The submitted Phase 2 requirements and Phase 3 diagrams are retained in `reference/` for traceability.
 
 ```
 cmake -S . -B build && cmake --build build
