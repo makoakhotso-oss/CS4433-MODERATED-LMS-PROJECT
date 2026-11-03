@@ -1,71 +1,153 @@
-# Moderated Offline Learning Management System
 
-Offline C++17 / SQLite console application for a secondary school (CS4433 Software
-Engineering project). Four roles - Administrator, Lecturer, Head of Department (HoD),
-Student - with assignment submission, late penalties, individual extensions, marking,
-HoD moderation, release of marks and a tamper-evident mark audit log.
+# CS4433 – Moderated Offline Learning Management System
 
+> **IMPORTANT: Viewing the Final Report**
+>
+> The Final Report contains hyperlinks to all eight phase documents and the project diagrams. GitHub's PDF preview may not activate these links.
+>
+> **Please download the Final Report PDF and open it in a PDF viewer to use the hyperlinks.**
+>
+> [**View or Download the Final Report**](docs/FINAL_REPORT.pdf)
+>
+> Supporting materials: [Phase Documents](reference/) | [11 Diagrams](diagrams/)
+
+## 1. Project Overview
+
+The Moderated Offline Learning Management System is a C++17 and SQLite console application developed for the CS4433 Software Engineering project.
+
+The system supports four user roles:
+
+- **Administrator:** Manages users, departments, courses and enrolments.
+- **Lecturer:** Manages assignments, submissions, marking and moderation requests.
+- **Student:** Views assignments, submits or resubmits work and accesses released marks.
+- **Head of Department (HoD):** Reviews moderated marks, requests corrections and approves marks for release.
+
+The application operates offline and uses a layered architecture to separate user interaction, business rules and database operations.
+
+## 2. Final Report
+
+[**Final Project Report (PDF)**](docs/FINAL_REPORT.pdf)
+
+The report summarises the eight software engineering phases, implementation, testing, challenges and project outcomes.
+
+**Note:** Download the PDF and open it outside GitHub to use its embedded hyperlinks.
+
+## 3. Phase Documents
+
+All original phase documents are available as PDF files.
+
+| Phase | Document |
+|---|---|
+| Phase 1 – Project Planning | [Project Management Plan](reference/phase1/202322652_Project_Management_Plan.pdf) |
+| Phase 2 – Requirements Engineering | [Stakeholder Analysis](reference/phase2/Stakeholder%20Analysis.pdf), [System Requirements Specification](reference/phase2/System%20Requirements%20Specification.pdf), [Use Case Model](reference/phase2/Use%20Case%20Model.pdf) |
+| Phase 3 – System Design | [Software Design Document](reference/phase3/Software%20Design%20Document.pdf) |
+| Phase 4 – Implementation | [System Implementation](reference/phase4/System_Implementation.pdf) |
+| Phase 5 – Verification and Validation | [Verification and Validation](reference/phase5/verification%20and%20validation.pdf) |
+| Phase 6 – Configuration Management and Quality Assurance | [Configuration Management and Quality Assurance](reference/phase6/Configuration%20Management%20and%20Quality%20Assurance.pdf) |
+| Phase 7 – Deployment | [Deployment Documentation](reference/phase7/Deployment.pdf) |
+| Phase 8 – Software Maintenance | [Software Maintenance and Professional, Legal and Ethical Issues](reference/phase8/SOFTWARE%20MAINTENANCE%20AND%20PROFESSIONAL%2C%20LEGAL%20AND%20ETHICAL%20ISSUES.pdf) |
+
+[View original assignment instructions](reference/assignment/CS4433%20Final%20Project%20-%20Individual%20Assignment.pdf)
+
+## 4. System Diagrams
+
+All 11 diagrams are provided as PNG images in the [diagrams folder](diagrams/).
+
+| No. | Diagram |
+|---|---|
+| 1 | [Work Breakdown Structure](diagrams/wbs.png) |
+| 2 | [Gantt Chart](diagrams/gantt_chart.png) |
+| 3 | [Use Case Diagram](diagrams/use_case.png) |
+| 4 | [Component Diagram](diagrams/component_diagram.png) |
+| 5 | [Class Diagram](diagrams/class_diagram.png) |
+| 6 | [State Machine Diagram](diagrams/state_diagram.png) |
+| 7 | [Activity Diagram](diagrams/activity_diagram.png) |
+| 8 | [Submit Assignment Sequence Diagram](diagrams/sequence_diagram_submit_assignment.png) |
+| 9 | [Moderate and Release Marks Sequence Diagram](diagrams/sequence_diagrams_moderate_and_release_marks.png) |
+| 10 | [Entity Relationship Diagram](diagrams/erd.png) |
+| 11 | [UML Deployment Diagram](diagrams/uml_deployment_diagrams.png) |
+
+## 5. Implementation and Architecture
+
+The system uses C++17, SQLite, CMake, GoogleTest and libsodium.
+
+Its layered architecture consists of:
+
+- **UI layer:** Console menus and user interaction.
+- **Service layer:** Business rules, authentication, assignment workflows, marking and moderation.
+- **Data layer:** Repository interfaces and SQLite implementations.
+
+The project also applies object-oriented principles and design patterns to improve maintainability and separation of responsibilities.
+
+### Source Code
+
+- [Application source code](src/)
+- [Header files](include/)
+- [Database schema](schema.sql)
+- [Build instructions](docs/BUILD_GUIDE.md)
+
+## 6. Building and Running the System
+
+Follow the complete [Build Guide](docs/BUILD_GUIDE.md) for prerequisites and setup instructions.
+
+Basic build commands:
+
+```bash
+cmake -S . -B build
+cmake --build build -j2
 ```
-include/lms/   headers        src/   implementation        tests/  GoogleTest suite (104 tests, as verified in the submitted build log)
-sql/schema.sql database schema (single source of truth, embedded at build time)
-docs/          build guide, coding standard, security, as-built deviations, requirements coverage
+
+Run the application using the executable generated by CMake, as described in the Build Guide.
+
+## 7. Testing and Verification
+
+The project includes automated tests using GoogleTest.
+
+The recorded verification results are:
+
+- **104 automated tests passed.**
+- **96.7% service-layer line coverage.**
+
+To run the tests:
+
+```bash
+ctest --test-dir build --output-on-failure
 ```
 
-Layers (Software Design Document 3.1): **ui** (console menus) -> **services** (rules,
-permissions, late penalty strategy, workflow) -> **data** (repository interfaces + SQLite
-implementations, the only code that touches SQLite).
+Supporting evidence:
 
-Quick start: see [docs/BUILD_GUIDE.md](docs/BUILD_GUIDE.md). The submitted Phase 2 requirements and Phase 3 diagrams are retained in `reference/` for traceability.
+- [Automated test source code](tests/)
+- [Requirements coverage](docs/REQUIREMENTS_COVERAGE.md)
+- [Phase 4 requirements traceability](docs/PHASE4_TRACEABILITY.md)
+- [Phase 5 verification and validation report](reference/phase5/verification%20and%20validation.pdf)
 
-```
-cmake -S . -B build && cmake --build build
-./build/lms_tests            # run the automated tests
-./build/lms --seed-demo      # empty database filled with demo school; log in as admin
-```
+## 8. Quality, Security and Maintenance
+
+The repository includes supporting documentation covering coding standards, security, requirements traceability and implementation decisions.
+
+- [Coding Standard](docs/CODING_STANDARD.md)
+- [Security Documentation](docs/SECURITY.md)
+- [As-Built Deviations](docs/AS_BUILT_DEVIATIONS.md)
+- [Resubmission Fix](docs/RESUBMISSION_FIX.md)
+- [Deliverable Contents](docs/DELIVERABLE_CONTENTS.md)
+
+The Phase 8 class-wide deadline extension change request (CR1) is documented as deferred perfective maintenance rather than an implemented feature.
+
+## 9. System Demonstration Video
+
+The system demonstration video covers the project problem, requirements, use cases, architecture, design, implementation, testing, challenges and limitations.
+
+**Video link:** To be added after the demonstration recording is uploaded.
+
+## 10. Project Deliverables
+
+This repository provides the final project report, eight phase documents, 11 PNG diagrams, C++17 implementation, database schema, automated tests, supporting documentation and demonstration video once uploaded.
+
+All project materials are organised in this single repository for assessment.
 
 ---
 
-## Final Project Submission
+**Course:** CS4433 – Software Engineering
 
-**Project:** Offline Moderated Learning Management System  
-**Module:** CS4433 – Software Engineering
-
-### Final Report
-- [Final Consolidated Report (PDF)](docs/FINAL_REPORT.pdf)
-
-### Original Diagrams
-
-**Phase 1: Project Planning**
-- [Work Breakdown Structure](diagrams/wbs.png)
-- [Gantt Chart](diagrams/gantt_chart.png)
-
-**Phase 2: Requirements Engineering**
-- [Use Case Diagram](diagrams/use_case.png)
-
-**Phase 3: System Design**
-- [Component Diagram](diagrams/component_diagram.png)
-- [Class Diagram](diagrams/class_diagram.png)
-- [State Machine Diagram](diagrams/state_diagram.png)
-- [Activity Diagram](diagrams/activity_diagram.png)
-- [Submit Assignment Sequence Diagram](diagrams/sequence_diagram_submit_assignment.png)
-- [Moderate and Release Marks Sequence Diagram](diagrams/sequence_diagrams_moderate_and_release_marks.png)
-- [Entity Relationship Diagram](diagrams/erd.png)
-
-**Phase 7: Deployment**
-- [UML Deployment Diagram](diagrams/uml_deployment_diagrams.png)
-
-### Implementation and Supporting Documentation
-- [Build and Installation Guide](docs/BUILD_GUIDE.md)
-- [Requirements Traceability](docs/PHASE4_TRACEABILITY.md)
-- [Requirements Coverage](docs/REQUIREMENTS_COVERAGE.md)
-- [As-Built Design Deviations](docs/AS_BUILT_DEVIATIONS.md)
-- [Security Documentation](docs/SECURITY.md)
-- [Earlier Assignment Documents](reference/)
-- [Source Code](src/)
-- [Automated Tests](tests/)
-- [Database Schema](sql/)
-- [CI Test Runs](../../actions)
-
-### Video Presentation
-15-minute project presentation: **Link to be added after recording.**
+**Institution:** National University of Lesotho
 
