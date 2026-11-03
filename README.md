@@ -135,10 +135,12 @@ The Phase 8 class-wide deadline extension change request (CR1) is documented as 
 
 ## 9. System Demonstration Video
 
-The system demonstration video covers the project problem, requirements, use cases, architecture, design, implementation, testing, challenges and limitations.
+The video demonstrates the system requirements, design, architecture,
+implementation, testing, challenges and limitations.
 
-**Video link:** To be added after the demonstration recording is uploaded.
+**[Download the Final LMS Demonstration Video](sha256:836f598e0529701d6cf99af7ec3c162889dc0a767599378218fa6ef5c427b329)**
 
+The video is provided as a GitHub Release asset (MP4).
 ## 10. Project Deliverables
 
 This repository provides the final project report, eight phase documents, 11 PNG diagrams, C++17 implementation, database schema, automated tests, supporting documentation and demonstration video once uploaded.
