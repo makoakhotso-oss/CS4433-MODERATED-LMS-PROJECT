@@ -138,7 +138,7 @@ The Phase 8 class-wide deadline extension change request (CR1) is documented as 
 The video demonstrates the system requirements, design, architecture,
 implementation, testing, challenges and limitations.
 
-**[Download here: sha256:836f598e0529701d6cf99af7ec3c162889dc0a767599378218fa6ef5c427b329
+Download here: https://github.com/makoakhotso-oss/CS4433-MODERATED-LMS-PROJECT/releases/download/v1/LMS_PRESENTATION.mp4
 
 The video is provided as a GitHub Release asset (MP4).
 ## 10. Project Deliverables
