@@ -36,23 +36,23 @@ cmake -S . -B build && cmake --build build
 ### Original Diagrams
 
 **Phase 1: Project Planning**
-- [Work Breakdown Structure](images/wbs.png)
-- [Gantt Chart](images/gantt_chart.png)
+- [Work Breakdown Structure](diagrams/wbs.png)
+- [Gantt Chart](diagrams/gantt_chart.png)
 
 **Phase 2: Requirements Engineering**
-- [Use Case Diagram](images/use_case.png)
+- [Use Case Diagram](diagrams/use_case.png)
 
 **Phase 3: System Design**
-- [Component Diagram](images/component_diagram.png)
-- [Class Diagram](images/class_diagram.png)
-- [State Machine Diagram](images/state_diagram.png)
-- [Activity Diagram](images/activity_diagram.png)
-- [Submit Assignment Sequence Diagram](images/sequence_diagram_submit_assignment.png)
-- [Moderate and Release Marks Sequence Diagram](images/sequence_diagrams_moderate_and_release_marks.png)
-- [Entity Relationship Diagram](images/erd.png)
+- [Component Diagram](diagrams/component_diagram.png)
+- [Class Diagram](diagrams/class_diagram.png)
+- [State Machine Diagram](diagrams/state_diagram.png)
+- [Activity Diagram](diagrams/activity_diagram.png)
+- [Submit Assignment Sequence Diagram](diagrams/sequence_diagram_submit_assignment.png)
+- [Moderate and Release Marks Sequence Diagram](diagrams/sequence_diagrams_moderate_and_release_marks.png)
+- [Entity Relationship Diagram](diagrams/erd.png)
 
 **Phase 7: Deployment**
-- [UML Deployment Diagram](images/uml_deployment_diagrams.png)
+- [UML Deployment Diagram](diagrams/uml_deployment_diagrams.png)
 
 ### Implementation and Supporting Documentation
 - [Build and Installation Guide](docs/BUILD_GUIDE.md)
